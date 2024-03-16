@@ -1,0 +1,6 @@
+# 忽略node_modules
+node_modules
+# 忽略VitePress开发服务器缓存
+docs/.vitepress/cache
+# 忽略VitePress打包输出
+docs/.vitepress/dist
