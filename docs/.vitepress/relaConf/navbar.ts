@@ -1,3 +1,4 @@
+/* 配置页面顶部的导航栏。它包含站点标题、全局菜单链接等。 */
 import { DefaultTheme } from "vitepress"
 export const nav: DefaultTheme.NavItem[] = [
   {
@@ -15,12 +16,13 @@ export const nav: DefaultTheme.NavItem[] = [
   },
   {
     text: '库',
-    items: [
-      {
-        text: '工具库',
-        link: '/library/tools',
-      },
-    ],
+    link: '/library/dayjs',
+    activeMatch: '/library/' // 当用户位于/library/路径时，该链接处于激活状态
+  },
+  {
+    text: '网站',
+    link: '/website/blog',
+    activeMatch: '/website/' // 当用户位于/library/路径时，该链接处于激活状态
   },
   {
     text: '关于我',

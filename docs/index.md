@@ -12,10 +12,10 @@ hero:
   actions: # 主页 hero 部分的操作按钮
     - theme: brand # 按钮的颜色主题，默认为 `brand`, 可选 `brand`、`alt`
       text: 开始查看
-      link: /api-examples
+      link: /markdown-examples
     - theme: alt
       text: 搭建指南
-      link: /markdown-examples
+      link: /demo
 
 features:
   - title: 💪 勇往直前

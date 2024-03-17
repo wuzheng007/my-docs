@@ -1,7 +1,7 @@
 // 使用 defineConfig 辅助函数将为配置选项提供 TypeScript 支持的智能提示。假设 IDE 支持它，那么在 JavaScript 和 TypeScript 中都将触发智能提示。
 import { defineConfig } from 'vitepress'
 // 导入自定义配置
-import { nav } from './relaConf/index'
+import { nav, sidebar } from './relaConf/index'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // 应用级配置选项
@@ -13,17 +13,8 @@ export default defineConfig({
   // 主题级配置选项
   themeConfig: {
     logo: '/logo.svg', // 导航栏上显示的 Logo，位于站点标题前
-    nav: nav, // 导航菜单项的配置
-    /* sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ], */
-
+    nav, // 导航菜单项的配置
+    sidebar, // 配置侧边栏菜单
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
@@ -46,6 +37,11 @@ export default defineConfig({
           },
         },
       },
+    },
+    // 页面右侧大纲
+    outline: {
+      label: '页面导航', // 显示在大纲上的标题，默认值是"On this page"
+      level: [2, 6] // 设置显示在大纲上的标题的等级[h2-h6]，默认值是2
     },
   }
 })
