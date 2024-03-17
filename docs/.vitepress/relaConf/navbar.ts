@@ -24,11 +24,11 @@ export const nav: DefaultTheme.NavItem[] = [
     link: '/website/blog',
     activeMatch: '/website/' // 当用户位于/library/路径时，该链接处于激活状态
   },
-  {
+  /* {
     text: '关于我',
     items: [
       { text: 'Github', link: 'https://github.com/wuzheng007' },
       { text: '掘金', link: 'https://juejin.cn/user/1060404027226311/posts' },
     ]
-  }
+  } */
 ]
