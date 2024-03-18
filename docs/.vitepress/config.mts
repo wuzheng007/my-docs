@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // 导入自定义配置
 import { nav, sidebar } from './relaConf/index'
 // https://vitepress.dev/reference/site-config
+// #region snippet
 export default defineConfig({
   // 应用级配置选项
   base: '/my-docs/',
@@ -45,3 +46,4 @@ export default defineConfig({
     },
   }
 })
+// #endregion snippet
