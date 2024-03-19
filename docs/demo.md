@@ -123,7 +123,7 @@ export default defineConfig({
   },
 });
 ```
-![alt text](images/demo/da-gang.png)
+![alt text](/images/demo/da-gang.png)
 
 ### 添加侧边栏
 继续修改VitePress的配置文件`config.mts`，`items`的每一项的`link`属性就是对应文章页的链接，改为对应的的文章路径即可。现在，我们可以看到左侧多了侧边栏。细心点可能会发现，右下角也多了一个链接到下一页的文本，称之为`docFooter`,这是VitePress自动为我们生成的。
@@ -153,7 +153,7 @@ export default defineConfig({
   },
 });
 ```
-![alt text](images/demo/ce-bian-lan.png)
+![alt text](/images/demo/ce-bian-lan.png)
 ### 修改docFooter
 现在docFooter里面显示有英文，我们希望显示中文，我们再次修改VitePress的配置文件`config.mts`。  
 因为我们当前在第一页，没有上一页，所以只显示下一页。
@@ -168,7 +168,7 @@ export default defineConfig({
   },
 });
 ```
-![alt text](images/demo/doc-footer.png)
+![alt text](/images/demo/doc-footer.png)
 
 
 ## 部署
