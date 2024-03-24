@@ -1,23 +1,47 @@
 /* 配置侧边栏 */
 import { DefaultTheme } from "vitepress"
 export const sidebar: DefaultTheme.Sidebar = {
+  /* 组件库的侧边栏 */
+  '/component-library/': { base: '/component-library/', items: sidebarComponentLibrary() },
   /* 库的侧边栏 */
   '/library/': { base: '/library/', items: sidebarLibrary() },
+  /* 笔记 */
+  '/notes/': { base: '/notes/', items: sidebarNotes() },
   /* 网站的侧边栏 */
-  '/website/': { base: '/website/', items: sidebarWebsite() },
-  /* 搭建指南侧边栏 */
-  '/demo/': { base: '/guide/', items: sidebarDemo() }
+  '/website/': { base: '/website/', items: sidebarWebsite() }
 }
-
+function sidebarComponentLibrary() {
+  return [
+    {
+      text: '组件库',
+      collapsed: false, // 是否折叠
+      items: [
+        { text: '准备工作', link: 'index' },
+      ]
+    }
+  ]
+}
 /* 【库】的侧边栏配置 */
 function sidebarLibrary() {
   return [
     {
       text: '常用库', // 侧边栏标题
-      collapsed: false, // 是否折叠
+      // collapsed: false, // 是否折叠
       items: [
         { text: 'dayjs', link: 'dayjs' },
         { text: 'decimaljs', link: 'decimaljs' },
+      ]
+    }
+  ]
+}
+
+function sidebarNotes() {
+  return [
+    {
+      text: '个人笔记', // 侧边栏标题
+      collapsed: false, // 是否折叠
+      items: [
+        { text: '网络请求封装', link: 'request' },
       ]
     }
   ]
@@ -33,11 +57,5 @@ function sidebarWebsite() {
         { text: '博客', link: 'blog' },
       ]
     }
-  ]
-}
-
-function sidebarDemo() {
-  return [
-
   ]
 }

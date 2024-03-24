@@ -6,13 +6,14 @@ export const nav: DefaultTheme.NavItem[] = [
     link: '/' // 表示docs/index.md
   },
   {
-    text: '学习记录',
-    items: [
-      {
-        text: 'Vue',
-        link: '/notes/vue',  // 表示docs/notes/vue.md
-      },
-    ],
+    text: '组件库',
+    link: '/component-library/', // 表示component-library/index.md
+    activeMatch: '/component-library/'
+  },
+  {
+    text: '笔记',
+    link: '/notes/request',
+    activeMatch: '/notes/' // 当用户位于/notes/路径时，该链接处于激活状态
   },
   {
     text: '库',
@@ -22,7 +23,7 @@ export const nav: DefaultTheme.NavItem[] = [
   {
     text: '网站',
     link: '/website/blog',
-    activeMatch: '/website/' // 当用户位于/library/路径时，该链接处于激活状态
+    activeMatch: '/website/'
   },
   /* {
     text: '关于我',
