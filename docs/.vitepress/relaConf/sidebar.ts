@@ -17,6 +17,7 @@ function sidebarComponentLibrary() {
       collapsed: false, // 是否折叠
       items: [
         { text: '准备工作', link: 'index' },
+        { text: 'Icon 图标', link: 'icon' },
       ]
     }
   ]

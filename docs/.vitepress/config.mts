@@ -42,7 +42,7 @@ export default defineConfig({
     // 页面右侧大纲
     outline: {
       label: '页面导航', // 显示在大纲上的标题，默认值是"On this page"
-      level: [2, 6] // 设置显示在大纲上的标题的等级[h2-h6]，默认值是2
+      level: [2, 3] // 设置显示在大纲上的标题的等级[h2-h3]，默认值是2
     },
     docFooter: { 
       prev: '上一页', 

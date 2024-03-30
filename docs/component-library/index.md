@@ -338,4 +338,5 @@ app.mount("#app");
 ```
 
 ### 效果预览
+完成以上工作后，可看到如下效果，前期的准备工作都做的差不多了，接下来可以开发组件了。
 ![An image](/images/component-library/Snipaste_2024-03-24_22-13-05.png)
