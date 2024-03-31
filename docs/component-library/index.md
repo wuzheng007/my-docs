@@ -129,13 +129,16 @@ export default router;
 ```
 
 ### CSS 样式
-针对CSS做一些准备工作，方便后期维护，同时也能保证样式统一。
+
+针对 CSS 做一些准备工作，方便后期维护，同时也能保证样式统一。
+
 #### 声明 CSS 变量
 
 新建`src/styles/vars.scss`文件，用于声明 css 变量。参考 [var.scss](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss#L118)
 
 ```scss
-/* 本文件主要用于定义全局样式变量，如颜色、字体等。*/
+/* 本文件主要用于定义全局样式变量，如颜色、字体等。
+参考：https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss#L118 */
 
 // 主题色（和element一致）
 $types: (
@@ -211,6 +214,13 @@ $types: (
   --zheng-disabled-bg-color: var(--zheng-fill-color-light);
   --zheng-disabled-text-color: var(--zheng-text-color-placeholder);
   --zheng-disabled-border-color: var(--zheng-border-color-light);
+
+  // box-shadow相关
+  --zheng-box-shadow-base: 0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px
+      rgba(0, 0, 0, 0.08);
+  --zheng-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  --zheng-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px
+      rgba(0, 0, 0, 0.12), 0px 8px 16px -8px rgba(0, 0, 0, 0.16);
 }
 ```
 
@@ -338,5 +348,6 @@ app.mount("#app");
 ```
 
 ### 效果预览
+
 完成以上工作后，可看到如下效果，前期的准备工作都做的差不多了，接下来可以开发组件了。
 ![An image](/images/component-library/Snipaste_2024-03-24_22-13-05.png)
