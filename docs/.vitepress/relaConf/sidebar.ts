@@ -18,6 +18,7 @@ function sidebarComponentLibrary() {
       items: [
         { text: '准备工作', link: 'index' },
         { text: 'Icon 图标', link: 'icon' },
+        { text: 'Button 按钮', link: 'button' },
       ]
     }
   ]
