@@ -19,7 +19,8 @@ function sidebarComponentLibrary() {
         { text: '准备工作', link: 'index' },
         { text: 'Icon 图标', link: 'icon' },
         { text: 'Button 按钮', link: 'button' },
-        { text: 'Card 按钮', link: 'card' },
+        { text: 'Card 卡片', link: 'card' },
+        { text: 'Dialog 对话框', link: 'dialog' },
       ]
     }
   ]
