@@ -22,6 +22,7 @@ function sidebarComponentLibrary() {
         { text: 'Card 卡片', link: 'card' },
         { text: 'Dialog 对话框', link: 'dialog' },
         { text: '组件库打包', link: 'bundle' },
+        { text: '组件库测试', link: 'test' },
       ]
     }
   ]
