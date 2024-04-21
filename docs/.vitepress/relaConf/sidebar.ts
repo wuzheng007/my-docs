@@ -21,6 +21,7 @@ function sidebarComponentLibrary() {
         { text: 'Button 按钮', link: 'button' },
         { text: 'Card 卡片', link: 'card' },
         { text: 'Dialog 对话框', link: 'dialog' },
+        { text: '组件库打包', link: 'bundle' },
       ]
     }
   ]
