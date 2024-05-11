@@ -10,13 +10,11 @@
  */
 export function debounce(fn, delay = 100) {
   let timer
-  return function () {
+  return function (...args) {
     if (timer) {
       clearTimeout(timer)
     }
-    timer = setTimeout(() => {
-      fn.apply(this, arguments)
-    }, delay)
+    timer = setTimeout(() => fn.apply(this, args), delay)
   }
 }
 /**
@@ -33,6 +31,9 @@ export function autoScale(selector = 'body', options = {}) {
   }
   // 缩放元素
   const el = document.querySelector(selector)
+  if (!el) {
+    throw new Error(`无法找到元素：${selector}`);
+  }
   // 解构配置信息 width: 设计稿宽度，height：设计稿高度 
   const { width = 1920, height = 1080 } = options
   el.style.width = `${width}px`
@@ -43,7 +44,7 @@ export function autoScale(selector = 'body', options = {}) {
   function init() {
     const scaleX = innerWidth / width // 横向缩放比例
     const scaleY = innerHeight / height // 纵向缩放比例
-    const scale = Math.floor(Math.min(scaleX, scaleY) * 100) / 100 // 最终缩放比例
+    const scale = Math.min(scaleX, scaleY) // 最终缩放比例
     const x = (innerWidth - width * scale) / 2
     const y = (innerHeight - height * scale) / 2
     el.style.transform = `translate(${x}px, ${y}px) scale(${scale})`
