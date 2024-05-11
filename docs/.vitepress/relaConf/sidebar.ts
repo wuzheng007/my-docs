@@ -48,6 +48,7 @@ function sidebarNotes() {
       collapsed: false, // 是否折叠
       items: [
         { text: '网络请求封装', link: 'request' },
+        { text: '大屏相关', link: 'largeScreen' },
       ]
     }
   ]
