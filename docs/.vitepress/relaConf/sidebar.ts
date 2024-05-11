@@ -49,6 +49,8 @@ function sidebarNotes() {
       items: [
         { text: '网络请求封装', link: 'request' },
         { text: '大屏相关', link: 'largeScreen' },
+        { text: '求职面试相关', link: 'jobInterview' },
+        { text: '微前端', link: 'microFrontend' },
       ]
     }
   ]
