@@ -8,6 +8,9 @@ export default defineConfig({
   // 应用级配置选项
   base: '/my-docs/',
   title: "我的文档", // 站点标题
+  markdown: { // 配置 Markdown 解析器选项
+    lineNumbers: true //为每个代码块启用行号
+  },
   head: [
     ['link', { rel: 'icon', href: '/my-docs/logo.svg' }]
   ],
