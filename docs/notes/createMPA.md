@@ -110,7 +110,7 @@ export default router
 
 目录结构大体上是这样的，详情可按照源码
 
-```
+```md
 .
 ├─ src
 │  ├─ App.vue

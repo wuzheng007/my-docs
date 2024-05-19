@@ -52,6 +52,7 @@ function sidebarNotes() {
         { text: '求职面试相关', link: 'jobInterview' },
         { text: '微前端', link: 'microFrontend' },
         { text: '创建多页应用', link: 'createMPA' },
+        { text: 'VScode插件开发', link: 'vscodePluginDevelopment' },
       ]
     }
   ]
