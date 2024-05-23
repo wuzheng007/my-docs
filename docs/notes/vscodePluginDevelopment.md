@@ -50,6 +50,41 @@ yo code
 
 ![An image](/images/notes/vscode-ui.png)
 
+## 效率
+
+### concurrently
+
+[concurrently](https://github.com/open-cli-tools/concurrently) 是一个流行的 Node.js 第三方库，用于并行（同时）运行多个命令。这个库特别适用于开发环境，其中可能需要同时启动和监控多个服务或进程，如前端构建工具、后端服务器、数据库等。
+
+#### 安装和使用
+
+```sh
+npm install --save-dev concurrently
+```
+
+安装完成后，你可以在 package.json 文件的 scripts 部分配置 concurrently 来并行运行多个命令。例如：
+
+```json
+"scripts": {  
+  "dev": "concurrently \"npm run server\" \"npm run client\"",  
+  "server": "node server.js",  
+  "client": "react-scripts start"  
+}
+```
+
+在这个例子中，运行 npm run dev 将会同时启动服务器端和客户端。
+
+可通过添加参数-k 或 --kill-others，当其中一个子进程退出时，此选项会终止其他所有子进程。这对于确保所有相关进程在其中一个失败时都能被清理很有用。`install:all`脚本可安装当前工程的依赖项，并会进入build-list-webview目录安装依赖项.
+
+```json
+"scripts": {  
+  "dev": "concurrently \"npm run server\" \"npm run client\" -k",  
+  "server": "node server.js",  
+  "client": "react-scripts start",
+  "install:all": "npm install && cd build-list-webview && npm install"
+}
+```
+
 ## 常见问题
 
 ### 1. 如何实现完全自定义的用户界面？
