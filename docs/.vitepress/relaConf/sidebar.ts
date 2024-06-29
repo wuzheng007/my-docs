@@ -47,6 +47,7 @@ function sidebarNotes() {
       text: '个人笔记', // 侧边栏标题
       collapsed: false, // 是否折叠
       items: [
+        { text: '集成开发环境', link: 'ide' },
         { text: '网络请求封装', link: 'request' },
         { text: '大屏相关', link: 'largeScreen' },
         { text: '求职面试相关', link: 'jobInterview' },
