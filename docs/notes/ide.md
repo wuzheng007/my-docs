@@ -1,24 +1,30 @@
 # 集成开发环境
 
-## Visual Studio Code
+## 代码格式化工具
 
-getuserinfo
+### Prettier
 
-### 插件推荐
+中文官网[https://www.prettier.cn/]
 
-#### 驼峰翻译助手
+## Visual Studio Code 插件推荐
+
+### 驼峰翻译助手
 
 纠结怎么取变量? 中文一键翻译转换成常用大小驼峰等格式。[插件介绍](https://marketplace.visualstudio.com/items?itemName=svenzhao.var-translation&ssr=false#overvie)
 
-##### 设置
+#### 设置
 
 1. 选择翻译引擎 [百度翻译密钥申请步骤](https://hcfy.app/docs/services/baidu-api)、[腾讯翻译君申请步骤](https://hcfy.app/docs/services/qq-api)
 2. 设置密钥
 
-##### 用法
+#### 用法
 
 1. 选中文本
 2. 按下快捷键`Alt+shift+t`即可。
+
+### Code Spell Checker
+
+一个基本的拼写检查器，可以很好地处理代码和文档。此拼写检查器的目标是帮助捕获常见的拼写错误，同时保持误报的数量较少。[插件介绍](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ## 扩展链接
 

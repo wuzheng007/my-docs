@@ -36,6 +36,7 @@ function sidebarLibrary() {
       items: [
         { text: 'dayjs', link: 'dayjs' },
         { text: 'decimaljs', link: 'decimaljs' },
+        { text: 'pptxgenjs', link: 'pptxgenjs' },
       ]
     }
   ]
@@ -51,10 +52,11 @@ function sidebarNotes() {
         { text: '网络请求封装', link: 'request' },
         { text: '大屏相关', link: 'largeScreen' },
         { text: '求职面试相关', link: 'jobInterview' },
-        { text: '微前端', link: 'microFrontend' },
         { text: '创建多页应用', link: 'createMPA' },
         { text: 'VScode插件开发', link: 'vscodePluginDevelopment' },
         { text: 'TypeScript', link: 'typeScript' },
+        { text: 'CSS', link: 'css' },
+        { text: 'JavaScript', link: 'javaScript' },
       ]
     }
   ]

@@ -7,11 +7,11 @@
 ::: code-group
 
 ```sh [npm]
-$ npm add -D dayjs
+npm add -D dayjs
 ```
 
 ```sh [yarn]
-$ yarn add -D dayjs
+yarn add -D dayjs
 ```
 
 :::
