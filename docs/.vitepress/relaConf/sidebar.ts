@@ -3,6 +3,8 @@ import { DefaultTheme } from "vitepress"
 export const sidebar: DefaultTheme.Sidebar = {
   /* 组件库的侧边栏 */
   '/component-library/': { base: '/component-library/', items: sidebarComponentLibrary() },
+  /* 模版的侧边栏 */
+  '/template/': { base: '/template/', items: sidebarTemplate() },
   /* 库的侧边栏 */
   '/library/': { base: '/library/', items: sidebarLibrary() },
   /* 笔记 */
@@ -23,6 +25,18 @@ function sidebarComponentLibrary() {
         { text: 'Dialog 对话框', link: 'dialog' },
         { text: '组件库打包', link: 'bundle' },
         { text: '组件库测试', link: 'test' },
+      ]
+    }
+  ]
+}
+
+function sidebarTemplate() {
+  return [
+    {
+      text: '模版',
+      collapsed: false, // 是否折叠
+      items: [
+        { text: '准备工作', link: 'index' }
       ]
     }
   ]
@@ -57,6 +71,7 @@ function sidebarNotes() {
         { text: 'TypeScript', link: 'typeScript' },
         { text: 'CSS', link: 'css' },
         { text: 'JavaScript', link: 'javaScript' },
+        { text: 'Git', link: 'git' },
       ]
     }
   ]

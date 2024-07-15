@@ -11,6 +11,11 @@ export const nav: DefaultTheme.NavItem[] = [
     activeMatch: '/component-library/'
   },
   {
+    text: '模版',
+    link: '/template/', // 表示template/index.md
+    activeMatch: '/template/'
+  },
+  {
     text: '笔记',
     link: '/notes/request',
     activeMatch: '/notes/' // 当用户位于/notes/路径时，该链接处于激活状态
