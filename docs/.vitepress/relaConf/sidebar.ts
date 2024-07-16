@@ -51,6 +51,7 @@ function sidebarLibrary() {
         { text: 'dayjs', link: 'dayjs' },
         { text: 'decimaljs', link: 'decimaljs' },
         { text: 'pptxgenjs', link: 'pptxgenjs' },
+        { text: 'vue', link: 'vue' },
       ]
     }
   ]

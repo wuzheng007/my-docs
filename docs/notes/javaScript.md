@@ -94,3 +94,7 @@ const cancel = () => {
 ## 精选文章
 
 1. [Fetch API 教程](https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html)
+
+## 扩展链接
+
+1. [一个可以查看 JS 代码执行情况的网站](https://www.jsv9000.app/)
