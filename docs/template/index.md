@@ -85,7 +85,7 @@ export default [
 
 [官网](https://www.prettier.cn/)，Prettier 是一个代码格式化工具。
 
-一、安装
+#### 一、安装
 
 ```bash
 pnpm add --save-dev --save-exact prettier
@@ -93,23 +93,21 @@ pnpm add --save-dev --save-exact prettier
 
 安装 prettier 为开发依赖，`--save-exact`这个选项是确保安装的版本是精确的。即 package.json 文件中记录的版本号不会包含任何语义化版本控制符（如 ^1.2.3 或 ~1.2.3），而是直接使用 1.2.3 这样的确切版本号。这有助于避免在后续安装时自动升级到不兼容的版本。
 
-二、创建 prettier 配置文件
+#### 二、创建 prettier 配置文件
 
-创建 .prettierrc 文件命令
+创建配置文件命令
 
 ```bash
-node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+node --eval "fs.writeFileSync('.prettierrc.mjs','export default {\n}\n')"
 ```
 
-在项目根目录下创建 `.prettierrc` 文件，这是[配置文件](https://prettier.io/docs/en/configuration)，可用 JSON 或 YAML 编写
+在项目根目录下创建 `.prettierrc.mjs` 文件，这是[配置文件](https://prettier.io/docs/en/configuration)，配置文件有多种格式，具体可参考官网
 
-```json
-{
-  "semi": true,
-}
+```mjs
+export default {};
 ```
 
-三、创建 prettier 忽略文件
+#### 三、创建 prettier 忽略文件
 
 创建 .prettierignore 文件命令
 
@@ -117,15 +115,65 @@ node --eval "fs.writeFileSync('.prettierrc','{}\n')"
 node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nnode_modules\ndist\n')"
 ```
 
-一下命令测试格式化所有文件命令
+测试格式化命令
 ::: code-group
 
 ```bash [npm]
-npx prettier . --write
+npx prettier src/main.ts --write
 ```
 
 ```bash [pnpm]
-pnpm exec prettier . --write
+pnpm exec prettier src/main.ts --write
 ```
 
 :::
+
+### 解决 eslint 与 prettier 冲突
+
+安装 eslint-plugin-prettier 和 eslint-config-prettier 插件。
+
+```bash
+pnpm add --save-dev eslint-plugin-prettier eslint-config-prettier
+```
+
+在 `eslint.config.js` 增加如下配置
+
+```js
+//eslint.config.js
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"; // [!code ++]
+export default [
+  //...其他配置
+  eslintPluginPrettierRecommended, // [!code ++] // 注意：这行代码必须放在其他配置后面
+];
+```
+
+此时，eslint 与 prettier 冲突的问题已经解决了。
+
+### VSCode 配置
+
+#### 一、安装插件
+
+1. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+2. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+#### 二、修改配置
+
+建议修改工作区的配置（配置文件在项目根目录下的.vscode/settings.json），并把配置文件提交到 git，以保证项目所有开发人员都使用相同的代码风格。以下是一个示例，具体配置可参考官网。
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+```
+
+截止到现在，我们的项目已经配置好了 ESLint、Prettier 以及 VSCode 插件。
