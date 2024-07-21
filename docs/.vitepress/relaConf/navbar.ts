@@ -11,7 +11,7 @@ export const nav: DefaultTheme.NavItem[] = [
     activeMatch: '/component-library/'
   },
   {
-    text: '模版',
+    text: '模板',
     link: '/template/', // 表示template/index.md
     activeMatch: '/template/'
   },

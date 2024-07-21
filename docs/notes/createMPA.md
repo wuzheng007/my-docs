@@ -13,7 +13,7 @@
 npm create vue@latest
 ```
 
-```
+```md
 √ 请输入项目名称： ... MPA-demo
 √ 请输入包名称： ... mpa-demo
 √ 是否使用 TypeScript 语法？ ... 是

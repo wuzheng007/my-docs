@@ -33,10 +33,12 @@ function sidebarComponentLibrary() {
 function sidebarTemplate() {
   return [
     {
-      text: '模版',
+      text: '模板',
       collapsed: false, // 是否折叠
       items: [
-        { text: '准备工作', link: 'index' }
+        { text: '准备工作', link: 'index' },
+        { text: 'css', link: 'css' },
+        { text: '图标使用', link: 'icon' }
       ]
     }
   ]
