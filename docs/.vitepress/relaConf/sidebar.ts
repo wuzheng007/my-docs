@@ -38,7 +38,8 @@ function sidebarTemplate() {
       items: [
         { text: '准备工作', link: 'index' },
         { text: 'css', link: 'css' },
-        { text: '图标使用', link: 'icon' }
+        { text: '图标使用', link: 'icon' },
+        { text: 'mock数据', link: 'mock' }
       ]
     }
   ]
