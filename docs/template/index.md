@@ -99,7 +99,8 @@ node --eval "fs.writeFileSync('.prettierrc.mjs','export default {\n}\n')"
 
 在项目根目录下创建 `.prettierrc.mjs` 文件，这是[配置文件](https://prettier.io/docs/en/configuration)，配置文件有多种格式，具体可参考官网
 
-```mjs
+```js
+/* .prettierrc.mjs */
 export default {};
 ```
 
