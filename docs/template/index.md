@@ -7,7 +7,7 @@
 
 ## 初始化项目
 
-本项目使用 Viet 搭建，具体可参考 Vite 官网：[搭建第一个 Vite 项目](https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project)。
+本项目使用 Vite 搭建，具体可参考 Vite 官网：[搭建第一个 Vite 项目](https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project)。
 
 ```bash
 pnpm create vite
@@ -54,16 +54,19 @@ import pluginVue from "eslint-plugin-vue";
 export default [
   {
     files: ["**/*.{js,mjs,cjs,ts,vue}"]
-    rules: { // [!code ++]
-      "no-var": "error", // 不允许使用var声明变量 // [!code ++]
-      "prefer-const": "error", // 声明后未重新赋值的变量，要求使用const声明 // [!code ++]
-    } // [!code ++]
   },
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/essential"],
   {files: ["**/*.vue"], languageOptions: {parserOptions: {parser: tseslint.parser}}},
+  { // [!code ++]
+    rules: { // [!code ++]
+      "no-var": "error", // 不允许使用var声明变量 // [!code ++]
+      "prefer-const": "error", // 声明后未重新赋值的变量，要求使用const声明 // [!code ++]
+      'vue/multi-word-component-names': 'off', // 关闭组件名大小写警告 // [!code ++]
+    } // [!code ++]
+  } // [!code ++]
 ];
 ```
 
@@ -287,4 +290,37 @@ export default defineConfig({
     } // [!code ++]
   }
 }
+```
+
+### 集成 element-plus
+
+[element-plus 官网](https://element-plus.org/zh-CN/)，按照官网说明，使用[按需导入](https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5)的方式。
+
+一、安装 element-plus
+
+```bash
+pnpm install element-plus
+```
+
+二、按需导入
+按照官方说明，使用按需导入的方式，避免引入所有组件，可以减小项目体积。
+
+```ts
+// vite.config.ts
+import AutoImport from 'unplugin-auto-import/vite' // [!code ++]
+import Components from 'unplugin-vue-components/vite' // [!code ++]]
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' // [!code ++]]
+
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    AutoImport({ // [!code ++]
+      resolvers: [ElementPlusResolver()], // [!code ++]
+    }), // [!code ++]
+    Components({ // [!code ++]
+      resolvers: [ElementPlusResolver()], // [!code ++]
+    }), // [!code ++]
+  ],
+})
 ```

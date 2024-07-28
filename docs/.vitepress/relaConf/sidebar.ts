@@ -40,7 +40,8 @@ function sidebarTemplate() {
         { text: 'css', link: 'css' },
         { text: '图标使用', link: 'icon' },
         { text: 'mock数据', link: 'mock' },
-        { text: 'axios二次封装', link: 'axios' }
+        { text: '网络请求', link: 'request' },
+        { text: '路由配置', link: 'router' }
       ]
     }
   ]

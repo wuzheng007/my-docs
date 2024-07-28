@@ -1,8 +1,8 @@
-# Axios
+# 网络请求
+
+## axios二次封装
 
 [Axios](https://axios-http.com/zh/) 是一个基于 Promise 的网络请求库，作用于 node 和浏览器。在服务器端它使用的是原生的 http 模块，在浏览器端它使用的是 XMLHttpRequest 对象。
-
-## 用法
 
 ### 一、安装
 
@@ -67,4 +67,18 @@ request.interceptors.response.use(
 );
 
 export default request;
+```
+
+## API接口统一管理
+
+项目内网络请求相关接口统一放在 src/api 文件夹，方便管理
+
+例如用户相关的接口
+
+```md
+.
+|—— api
+|    |—— user
+|    |   |—— index.ts
+|    |   |—— type.ts 
 ```
