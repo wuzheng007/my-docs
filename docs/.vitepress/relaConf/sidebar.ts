@@ -7,6 +7,8 @@ export const sidebar: DefaultTheme.Sidebar = {
   '/template/': { base: '/template/', items: sidebarTemplate() },
   /* 库的侧边栏 */
   '/library/': { base: '/library/', items: sidebarLibrary() },
+  /* vscode */
+  '/vscode-extension/': { base: '/vscode-extension/', items: sidebarVscodeExtension() },
   /* 笔记 */
   '/notes/': { base: '/notes/', items: sidebarNotes() },
   /* 网站的侧边栏 */
@@ -62,6 +64,19 @@ function sidebarLibrary() {
   ]
 }
 
+function sidebarVscodeExtension() {
+  return [
+    {
+      text: 'VSCode扩展开发', // 侧边栏标题
+      collapsed: false, // 是否折叠
+      items: [
+        { text: '开始', link: 'index' },
+        { text: '介绍', link: 'introduce' },
+      ]
+    }
+  ]
+}
+
 function sidebarNotes() {
   return [
     {
@@ -73,7 +88,6 @@ function sidebarNotes() {
         { text: '大屏相关', link: 'largeScreen' },
         { text: '求职面试相关', link: 'jobInterview' },
         { text: '创建多页应用', link: 'createMPA' },
-        { text: 'VScode插件开发', link: 'vscodePluginDevelopment' },
         { text: 'TypeScript', link: 'typeScript' },
         { text: 'CSS', link: 'css' },
         { text: 'JavaScript', link: 'javaScript' },

@@ -16,6 +16,11 @@ export const nav: DefaultTheme.NavItem[] = [
     activeMatch: '/template/'
   },
   {
+    text: 'VSCode扩展开发',
+    link: '/vscode-extension/', // 表示vscode-extension/index.md
+    activeMatch: '/vscode-extension/'
+  },
+  {
     text: '笔记',
     link: '/notes/request',
     activeMatch: '/notes/' // 当用户位于/notes/路径时，该链接处于激活状态
