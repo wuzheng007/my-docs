@@ -72,6 +72,7 @@ function sidebarVscodeExtension() {
       items: [
         { text: '开始', link: 'index' },
         { text: '介绍', link: 'introduce' },
+        { text: '编程语言功能', link: 'programmaticLanguageFeatures' },
       ]
     }
   ]
