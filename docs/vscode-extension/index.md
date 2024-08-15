@@ -239,8 +239,8 @@ context.subscriptions.push(
 ## 参考链接
 
 1. [VSCode 插件开发指南](https://code.visualstudio.com/api)
-2. [VSCode 插件开发指南-中文(非官方)](https://rackar.github.io/vscode-ext-doccn/)
-3. [VSCode 插件开发指南-中文(非官方)](https://liiked.github.io/VS-Code-Extension-Doc-ZH/#/)
+2. [VSCode 插件开发指南-中文(非官方)](https://vscode.github.net.cn/api/)
+3. [VSCode 插件开发指南-中文(非官方)](https://www.bookstack.cn/read/VS-Code-Extension-Doc-ZH/README.md)
 4. [掘金一下 | 从零开发一款基于 webview 的 vscode 扩展)](https://juejin.cn/post/7000589186898231333?searchId=20240519194956C89A4A61F0DD0BE5BC6A#heading-52)
 5. [小茗同学-vscode-plugin-demo](https://github.com/sxei/vscode-plugin-demo)
 6. [VSCode 插件开发全攻略](https://blog.haoji.me/vscode-plugin-overview.html)
