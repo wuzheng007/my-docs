@@ -93,6 +93,7 @@ function sidebarNotes() {
         { text: 'CSS', link: 'css' },
         { text: 'JavaScript', link: 'javaScript' },
         { text: 'Git', link: 'git' },
+        { text: 'SVN', link: 'svn' },
       ]
     }
   ]
