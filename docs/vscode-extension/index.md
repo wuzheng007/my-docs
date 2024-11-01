@@ -199,6 +199,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 ## 快捷键
 
+## 打包
+
+使用`vsce`[打包扩展](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions)，会生成一个`.vsix`文件。打包前注意，不需要将所有项目下所有文件都打包进去，可在项目根目录下创建一个`.vscodeignore`文件，来排除掉这些文件包含在扩展安装包内,参考[使用.vscodeignore](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#using-.vscodeignore)，
+
 ## 常见问题
 
 ### 1. webview 视图如何加载本地资源?

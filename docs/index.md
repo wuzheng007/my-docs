@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: zheng的文档站点
-  text: 记录一些技术的点点滴滴
+  text: 记录技术点滴
   tagline: 知道的越多，不知道的就越多
   image:
     src: /banner.svg # text 和 tagline 区域旁的图片

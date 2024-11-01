@@ -1,6 +1,7 @@
 # TypeScript
 
 - [TypeScript官网](https://www.typescriptlang.org/zh/)
+- [TypeScript中文文档](https://ts.nodejs.cn/)
 - [《TypeScript 教程》阮一峰](https://wangdoc.com/typescript/)
 
 ## 开发准备
