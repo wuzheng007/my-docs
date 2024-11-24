@@ -30,6 +30,13 @@ VSCode内置了强大的命令行界面，可让您控制启动编辑器的方�
 `Ctrl+Shift+O`可让您导航到文件中的特定符号
 `Ctrl+G`可让你导航至文件中的特定行
 
+## 推荐插件
+
+1. [Common Intellisense](https://marketplace.visualstudio.com/items?itemName=simonhe.common-intellisense)：此插件能够提供超级强大的智能提示功能，包含属性、事件、插槽以及对应的注释和类型，实例上的方法等等，支持多个 UI 库，让你的开发效率更上一层楼。
+2. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)：适用于代码和文档的基本拼写检查器。此拼写检查器的目标是帮助捕捉常见的拼写错误，同时保持较低的误报数量。
+3. [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能感知，自动完成文件名的 Visual Studio Code 插件。
+4. [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)：在 VS Code 中截取代码的精美屏幕截图！
+
 ## 相关链接
 
 1. [VSCode官方文档](https://code.visualstudio.com/docs)
