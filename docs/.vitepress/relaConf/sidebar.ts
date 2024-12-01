@@ -9,6 +9,8 @@ export const sidebar: DefaultTheme.Sidebar = {
   '/library/': { base: '/library/', items: sidebarLibrary() },
   /* vscode */
   '/vscode-extension/': { base: '/vscode-extension/', items: sidebarVscodeExtension() },
+  /* nodejs */
+  '/nodejs/': { base: '/nodejs/', items: sidebarNodejs() },
   /* 笔记 */
   '/notes/': { base: '/notes/', items: sidebarNotes() },
   /* 网站的侧边栏 */
@@ -73,6 +75,17 @@ function sidebarVscodeExtension() {
         { text: '开始', link: 'index' },
         { text: '介绍', link: 'introduce' },
         { text: '编程语言功能', link: 'programmaticLanguageFeatures' },
+      ]
+    }
+  ]
+}
+function sidebarNodejs() {
+  return [
+    {
+      text: 'NodeJS', // 侧边栏标题
+      collapsed: false, // 是否折叠
+      items: [
+        { text: '开始', link: 'index' },
       ]
     }
   ]
