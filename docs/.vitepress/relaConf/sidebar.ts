@@ -108,6 +108,7 @@ function sidebarNotes() {
         { text: 'Git', link: 'git' },
         { text: 'SVN', link: 'svn' },
         { text: 'Visual Studio Code', link: 'vscode' },
+        { text: '正则表达式', link: 'regex' },
       ]
     }
   ]
