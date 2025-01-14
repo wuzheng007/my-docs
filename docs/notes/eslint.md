@@ -153,7 +153,7 @@ export default antfu(
 npx @eslint/config-inspector
 ```
 
-以上命令运行成功之后，访问 http://localhost:7777/ 查看您的 ESLint 配置。配置文件的更改将自动更新.
+以上命令运行成功之后，查看您的 ESLint 配置请访问 `http://localhost:7777/`。配置文件的更改将自动更新.
 
 ```bash
 npx @eslint/config-inspector --help
