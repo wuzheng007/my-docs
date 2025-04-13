@@ -10,10 +10,10 @@
 使用此配置无需使用 `Prettier` 了。[@antfu/eslint-config](https://www.npmjs.com/package/@antfu/eslint-config)
 
 ```bash
-pnpm i -D eslint @antfu/eslint-config
+npm i -D eslint @antfu/eslint-config
 ```
 
-在项目根目录下创建 `eslint.config.mjs` 文件，并添加如下 VSCode 设置
+在项目根目录下创建 `eslint.config.mjs` 文件，添加如下 VSCode 设置
 
 ::: code-group
 
@@ -21,8 +21,8 @@ pnpm i -D eslint @antfu/eslint-config
 import antfu from "@antfu/eslint-config";
 
 export default antfu(
+  // 第一个参数是配置 antfu 的配置
   {
-    // 配置 antfu 的配置
     // 设置项目的类型，默认为 app
     type: "lib",
     // 开始代码样式格式化
@@ -30,8 +30,12 @@ export default antfu(
 
     // 或者你可以更加细粒度的设置
     stylistic: {
-      indent: 2, // 4, or 'tab'
-      quotes: "single", // or 'double'
+      indent: 2,
+      quotes: "single",
+      semi: false,
+      overrides: {
+        "vue/multi-word-component-names": "off",
+      },
     },
     // TypeScript 和 Vue 是自动检测的，你也可以显式启用它们
     typescript: true,
@@ -58,14 +62,12 @@ export default antfu(
     ],
 
     /* 
-      使用外部格式化程序来格式化 ESLint 尚无法处理的文件
-      需要借助外部插件 eslint-plugin-format
-      因此需要安装插件，否则会报错
-      运行 npx eslint 会提示你缺少的插件 
+      使用外部格式化程序来格式化 ESLint 尚无法处理的文件。需要借助外部插件 eslint-plugin-format
+      此需要安装插件，否则会报错，运行 npx eslint 会提示你缺少的插件 
     */
     formatters: {
       /**
-       * 格式化 CSS、LESS、SCSS 文件，还有 Vue 中的 `<style>` 块
+       * 格式化 CSS、LESS、SCSS 文件，
        * 默认使用 Prettier
        */
       css: true,
@@ -82,8 +84,7 @@ export default antfu(
       markdown: "prettier",
     },
   },
-  // 从第二个参数开始，它们是 ESLint Flat Configs
-  // 你可以有多个配置
+  // 从第二个参数开始，它们是 ESLint Flat Configs 你可以有多个配置
   {}
 );
 ```
