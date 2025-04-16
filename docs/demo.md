@@ -1,6 +1,6 @@
 # 说明
 
-记录一下自己利用`VitePress`搭建个人博客的过程。[VitePress官网](https://vitepress.dev/zh/)
+记录一下自己利用`VitePress`搭建个人博客的过程。[VitePress 官网](https://vitepress.dev/zh/)
 
 ## 准备工作
 
@@ -21,6 +21,7 @@
 ![alt text](/images/demo/image-2.png)
 
 ## 修改首页
+
 接下来对首页进行修改，完成下图所示效果。
 ![alt text](/images/demo/image.png)
 
@@ -111,83 +112,106 @@ features:
 ![alt text](/images/demo/wen-zhang.png)
 
 ### 修改大纲
-修改VitePress的配置文件`config.mts`，即可看到下图的效果（[修改大纲](https://vitepress.dev/zh/reference/default-theme-config#outline)）。原来默认只显示了二级标题，且大纲的标题是英文。
+
+修改 VitePress 的配置文件`config.mts`，即可看到下图的效果（[修改大纲](https://vitepress.dev/zh/reference/default-theme-config#outline)）。原来默认只显示了二级标题，且大纲的标题是英文。
+
 ```ts
 // .vitepress/config.mts
 export default defineConfig({
   themeConfig: {
-    outline: { // 页面右侧大纲 // [!code ++]
+    outline: {
+      // 页面右侧大纲 // [!code ++]
       label: "页面导航", // 显示在大纲上的标题，默认值是"On this page" // [!code ++]
       level: [2, 6], // 设置显示在大纲上的标题的等级[h2-h6]，默认值是2 // [!code ++]
     },
   },
 });
 ```
+
 ![alt text](/images/demo/da-gang.png)
 
 ### 添加侧边栏
-继续修改VitePress的配置文件`config.mts`，`items`的每一项的`link`属性就是对应文章页的链接，改为对应的的文章路径即可。现在，我们可以看到左侧多了侧边栏。细心点可能会发现，右下角也多了一个链接到下一页的文本，称之为`docFooter`,这是VitePress自动为我们生成的。
+
+继续修改 VitePress 的配置文件`config.mts`，`items`的每一项的`link`属性就是对应文章页的链接，改为对应的的文章路径即可。现在，我们可以看到左侧多了侧边栏。细心点可能会发现，右下角也多了一个链接到下一页的文本，称之为`docFooter`,这是 VitePress 自动为我们生成的。
+
 ```ts
 // .vitepress/config.mts
 export default defineConfig({
   themeConfig: {
-    sidebar: [ // [!code ++]
-      { // [!code ++]
-        text: '简介', // [!code ++]
-        items: [ // [!code ++]
-          { text: '什么是 VitePress？', link: '/' }, // [!code ++]
-          { text: '快速开始', link: '/' }, // [!code ++]
-          { text: '路由', link: '/' }, // [!code ++]
-          { text: '部署', link: '/' }, // [!code ++]
-        ] // [!code ++]
+    sidebar: [
+      // [!code ++]
+      {
+        // [!code ++]
+        text: "简介", // [!code ++]
+        items: [
+          // [!code ++]
+          { text: "什么是 VitePress？", link: "/" }, // [!code ++]
+          { text: "快速开始", link: "/" }, // [!code ++]
+          { text: "路由", link: "/" }, // [!code ++]
+          { text: "部署", link: "/" }, // [!code ++]
+        ], // [!code ++]
       }, // [!code ++]
-      { // [!code ++]
-        text: '写作', // [!code ++]
-        items: [ // [!code ++]
-          { text: 'Markdown扩展', link: '/' }, // [!code ++]
-          { text: '资源处理', link: '/' }, // [!code ++]
-          { text: '国际化', link: '/' }, // [!code ++]
-        ] // [!code ++]
-      } // [!code ++]
-    ] // [!code ++]
+      {
+        // [!code ++]
+        text: "写作", // [!code ++]
+        items: [
+          // [!code ++]
+          { text: "Markdown扩展", link: "/" }, // [!code ++]
+          { text: "资源处理", link: "/" }, // [!code ++]
+          { text: "国际化", link: "/" }, // [!code ++]
+        ], // [!code ++]
+      }, // [!code ++]
+    ], // [!code ++]
   },
 });
 ```
+
 ![alt text](/images/demo/ce-bian-lan.png)
-### 修改docFooter
-现在docFooter里面显示有英文，我们希望显示中文，我们再次修改VitePress的配置文件`config.mts`。  
+
+### 修改 docFooter
+
+现在 docFooter 里面显示有英文，我们希望显示中文，我们再次修改 VitePress 的配置文件`config.mts`。  
 因为我们当前在第一页，没有上一页，所以只显示下一页。
+
 ```ts
 // .vitepress/config.mts
 export default defineConfig({
   themeConfig: {
-    docFooter: { // [!code ++]
-      prev: '上一页', // [!code ++]
-      next: '下一页' // [!code ++]
-    } // [!code ++]
+    docFooter: {
+      // [!code ++]
+      prev: "上一页", // [!code ++]
+      next: "下一页", // [!code ++]
+    }, // [!code ++]
   },
 });
 ```
+
 ![alt text](/images/demo/doc-footer.png)
 
-
 ## 部署
-这里我部署到GitHub
 
-### 建立本地git仓库
-1. 初始化git仓库，在项目根目录下（my-docs）打开终端，执行以下命令，初始化一个`git`仓库
+这里我部署到 GitHub
+
+### 建立本地 git 仓库
+
+1. 初始化 git 仓库，在项目根目录下（my-docs）打开终端，执行以下命令，初始化一个`git`仓库
+
 ```sh
 git init
 ```
+
 2. 添加`.gitignore`文件，忽略一些不必要提交的文件
+
 ```
 node_modules
 cache
 dist
 ```
 
-### 添加github部署配置文件
+### 添加 github 部署配置文件
+
 按照[官网说明](https://vitepress.dev/zh/guide/deploy#github-pages)，在项目根目录下新建`.github`文件夹，在`.github`文件夹内新建一个子文件夹`workflows`，在`workflows`文件夹内新建一个`deploy.yml`文件，复制官网给的配置，内容如下：
+
 ```yml:line-numbers
 # 构建 VitePress 站点并将其部署到 GitHub Pages 的示例工作流程
 #
@@ -254,30 +278,40 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
 ### 设置基础路径
-修改`config.mts`文件，`base`属性值需要以`/`开头和结尾， 中间内容与github仓库名保持一致，具体要求可查看[官网文档](https://vitepress.dev/zh/reference/site-config#base)。
+
+修改`config.mts`文件，`base`属性值需要以`/`开头和结尾， 中间内容与 github 仓库名保持一致，具体要求可查看[官网文档](https://vitepress.dev/zh/reference/site-config#base)。
+
 ```ts
 export default defineConfig({
   // ... 其他配置
-  base: '/my-web-docs/', // [!code ++]
-})
+  base: "/my-web-docs/", // [!code ++]
+});
 ```
-### 新建github仓库  
+
+### 新建 github 仓库
+
 注意：**仓库名这里设置为和上面配置`base`属性一致**
+
 <!-- ![alt text](image-2.png) -->
+
 ![alt text](/images/demo/create-store.png)
 
-### 修改github仓库配置
+### 修改 github 仓库配置
+
 仓库新建完成之后，按照下图修改一下仓库设置
 ![alt text](/images/demo/store-setting.png)
 
-### 提交代码并推送到github仓库
+### 提交代码并推送到 github 仓库
+
 ```sh
 # 添加所有文件到暂存区
 git add .
 # 提交暂存区文件
 git commit -m "首次提交"
 ```
+
 ```sh
 # 重命名当前分支为main，如果配置部署文件时，第9行的分支名是master，则无需执行此条命令
 git branch -M main
@@ -288,16 +322,17 @@ git push -u origin main
 ```
 
 ### 检查部署结果
+
 代码推送到`gitub`成功后，刷新页面，看到下图说明部署成功了，可以点击链接进行访问
 ![alt text](/images/demo/store-setting-2.png)
+
 ### 重新执行工作流
+
 没有没有看到上面部署成功的结果，可以自行按照下图操作，重新执行一下工作流，执行完成后再次查看效果
 ![alt text](/images/demo/store-actions.png)
 
-
 ## 文件目录结构图:
+
 ![alt text](/images/demo/toc.png)
-
-
 
 参考链接[AlbertZhang 的文档站](https://docs.bugdesigner.cn/docs/Tutorial/vitepress.html)、[千帆的博客](https://helloahao096.github.io/helloahao/posts/GitHub%20Action%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html)
