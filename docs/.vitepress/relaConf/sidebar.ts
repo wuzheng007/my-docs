@@ -59,6 +59,7 @@ function sidebarLibrary() {
       items: [
         { text: 'dayjs', link: 'dayjs' },
         { text: 'decimaljs', link: 'decimaljs' },
+        { text: 'vue-i18n', link: 'vue-i18n' },
         { text: 'pptxgenjs', link: 'pptxgenjs' },
         { text: 'vue', link: 'vue' },
       ]
