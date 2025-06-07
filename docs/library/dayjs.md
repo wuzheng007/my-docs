@@ -42,32 +42,37 @@ import dayjs from "dayjs";
 const fDate1 = dayjs().format();
 // 自定义格式
 const fDate2 = dayjs().format("YYYY-MM-DD HH:mm:ss");
+// 时间戳
+const fDate3 = dayjs().valueOf();
 ```
 
-### 3. 时间运算操作
+### 3. 操作
 
 ```js
 import dayjs from "dayjs";
 const time = dayjs();
-// 加一天
-console.log(time.add(1, "day").format("YYYY-MM-DD"));
-// 减一天
-console.log(time.subtract(1, "day").format("YYYY-MM-DD"));
-// 加一周
-console.log(time.add(1, "week").format("YYYY-MM-DD"));
-// 加一个月
-console.log(time.add(1, "month").format("YYYY-MM-DD"));
-// 加一年
-console.log(time.add(1, "year").format("YYYY-MM-DD"));
+const time1 = time.add(1, "day").format("YYYY-MM-DD"); // 加一天
+const time2 = time.subtract(1, "day").format("YYYY-MM-DD"); // 减一天
 
-// 当天开始的时间
-console.log(time.startOf("day").format("YYYY-MM-DD HH:mm:ss"));
-// 当天结束的时间
-console.log(time.endOf("day").format("YYYY-MM-DD HH:mm:ss"));
-// 本周开始的时间
-console.log(time.startOf("week").format("YYYY-MM-DD HH:mm:ss"));
-// 本周结束的时间
-console.log(time.endOf("week").format("YYYY-MM-DD HH:mm:ss"));
+const time3 = time.add(1, "week").format("YYYY-MM-DD"); // 加一周
+const time4 = time.add(1, "month").format("YYYY-MM-DD"); // 加一个月
+
+const time5 = time.startOf("day").format("YYYY-MM-DD HH:mm:ss"); // 当天开始的时间
+const time6 = time.endOf("day").format("YYYY-MM-DD HH:mm:ss"); // 当天结束的时间
+
+const time7 = time.startOf("week").format("YYYY-MM-DD HH:mm:ss"); // 本周开始的时间
+```
+
+### 4. 查询
+
+```js
+import dayjs from "dayjs";
+const a = dayjs();
+const b = dayjs("2024-04-01 00:00:00");
+// a是否在b之前
+console.log(a.isBefore(b));
+// a是否在b之后
+console.log(a.isAfter(b));
 ```
 
 ## 进阶用法

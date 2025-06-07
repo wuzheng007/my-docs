@@ -60,3 +60,5 @@ new Vue({
 ```
 
 3. 在组件中使用 i18n 实例。
+
+(vue-i18n 用法总结)[https://github.com/dev-zuo/zuo11.com/blob/main/src/notes/2021/5/Vue%20%E5%9B%BD%E9%99%85%E5%8C%96%20vue-i18n%20%E7%9B%B8%E5%85%B3%E7%94%A8%E6%B3%95%E3%80%81%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93.md]
