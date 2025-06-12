@@ -111,6 +111,7 @@ function sidebarNotes() {
         { text: 'Visual Studio Code', link: 'vscode' },
         { text: '正则表达式', link: 'regex' },
         { text: 'ESLint', link: 'eslint' },
+        { text: '表格封装', link: 'table' },
       ]
     }
   ]
