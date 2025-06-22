@@ -112,6 +112,7 @@ function sidebarNotes() {
         { text: '正则表达式', link: 'regex' },
         { text: 'ESLint', link: 'eslint' },
         { text: '表格封装', link: 'table' },
+        { text: '国际化', link: 'i18n' },
       ]
     }
   ]
