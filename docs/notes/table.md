@@ -22,7 +22,12 @@
     </section>
     <!-- 表格主体 -->
     <section class="table__body">
-      <el-table v-bind="$attrs" v-on="$listeners" :border="border">
+      <el-table
+        ref="tableRef"
+        v-bind="$attrs"
+        v-on="$listeners"
+        :border="border"
+      >
         <!-- el-table的empty插槽， 表格空数据时显示的内容， -->
         <template #empty>
           <slot name="empty" />
@@ -36,7 +41,6 @@
           v-for="(col, index) in columns"
           :key="col.key || `table-column-${col.prop || index}`"
           :column="col"
-          :scopedSlots="$scopedSlots"
         >
         </table-column>
       </el-table>
@@ -51,8 +55,8 @@
           :page-sizes="[10, 30, 50, 100]"
           layout="total, sizes, prev, pager, next, jumper"
           :total="total"
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
+          @size-change="$_handleSizeChange"
+          @current-change="$_handleCurrentChange"
         />
       </slot>
     </section>
@@ -62,6 +66,11 @@
 <script>
 export default {
   inheritAttrs: false,
+  provide() {
+    return {
+      tableSlots: this.$scopedSlots, // 提供当前组件的插槽给子组件使用
+    };
+  },
   components: {
     TableColumn: () => import("./components/TableColumn.vue"),
   },
@@ -121,10 +130,16 @@ export default {
   },
   methods: {
     /**
+     * 获取表格的ref引用
+     */
+    getTableRef() {
+      return this.$refs.tableRef;
+    },
+    /**
      * 分页大小改变
      * @param {Number} pageSize 每页显示条
      */
-    handleSizeChange(pageSize) {
+    $_handleSizeChange(pageSize) {
       this.$emit("update:pageSize", pageSize);
       // 重置页码为 1
       this.$emit("update:pageNumber", 1);
@@ -134,7 +149,7 @@ export default {
      * 分页页码改变
      * @param {Number} pageNumber 当前页码
      */
-    handleCurrentChange(pageNumber) {
+    $_handleCurrentChange(pageNumber) {
       this.$emit("update:pageNumber", pageNumber);
       this.$emit("page-change", { pageNumber });
     },
@@ -164,16 +179,12 @@ export default {
 export default {
   name: "TableColumn",
   inheritAttrs: false,
+  inject: ["tableSlots"], // 注入父组件提供的插槽
   props: {
     // 列配置
     column: {
       type: Object,
       required: true,
-    },
-    // 插槽
-    scopedSlots: {
-      type: Object,
-      default: () => ({}),
     },
   },
   methods: {
@@ -182,7 +193,7 @@ export default {
      * @param h
      */
     renderMultiHeaderColumn(h) {
-      const { column, scopedSlots } = this;
+      const { column } = this;
       return h(
         "el-table-column",
         {
@@ -194,7 +205,7 @@ export default {
         column.children.map((child, i) =>
           h("TableColumn", {
             key: child.key || `table-column-${child.prop || i}`,
-            props: { column: child, scopedSlots },
+            props: { column: child },
           })
         )
       );
@@ -240,7 +251,7 @@ export default {
       const name = col.headerSlot;
       if (name) {
         // 使用表头插槽
-        return this.scopedSlots[name]?.({ column, $index }) || column.label;
+        return this.tableSlots[name]?.({ column, $index }) || column.label;
       } else {
         // 默认表头渲染
         return column.label;
@@ -258,7 +269,7 @@ export default {
         return this.column.render(h, { row, column, $index });
       } else if (this.column.slot) {
         // 使用插槽渲染
-        return this.scopedSlots[this.column.slot]?.({
+        return this.tableSlots[this.column.slot]?.({
           row,
           column,
           $index,
@@ -326,12 +337,13 @@ export default {
   data() {
     return {
       tableProps: {
+        ref: "customTable",
         loading: false,
         pagination: true, // 开启分页
         pageNumber: 1,
         pageSize: 10,
         total: 0, // 表格数组总数
-        maxHeight: "600px",
+        maxHeight: "500px",
         data: [],
         columns: [
           {
@@ -400,6 +412,7 @@ export default {
                     props: { type: "text" },
                     on: {
                       click: () => {
+                        console.log("表格ref",this.$refs.customTable.getTableRef());
                         console.log("编辑", row, column, $index);
                       },
                     },
@@ -522,11 +535,7 @@ const separator = "****"; // 分隔符
     2. 数据源
     3. 需要合并的列
 */
-const mergeRowByProp = (
-  { row, column, rowIndex, columnIndex },
-  tableData,
-  mergeList
-) => {
+const mergeRowByProp = ({ row, column, rowIndex, columnIndex }, tableData, mergeList ) => {
   // 如果合并的列数大于1，需要对数据进行改造，使后面的列依赖于前面的列
   if (mergeList.length > 1) {
     tableData = JSON.parse(JSON.stringify(tableData));
@@ -552,7 +561,47 @@ const mergeRowByProp = (
     }
   }
 };
-export { mergeRowByProp };
+
+/**
+ * 根据配置列表 mergeList 的字段，合并表格行（用于 el-table 的 span-method）
+ * 合并规则：当且仅当当前行与下一行的 prop 及所有 deps 的值都相同时，才合并行
+ * @param {Object} obj - el-table span-method 的入参 { row, column, rowIndex, columnIndex }
+ * @param {Array} tableData - 表格数据源
+ * @param {Array} mergeList - 需要合并的列配置列表，格式: [ { prop: 'name', deps: ['age', 'sex'] }, ... ]
+ * 合并规则配置数组，每一项表示某列的合并规则：
+ * - prop: 主字段，与 deps 联合判断是否合并
+ * - deps: 依赖字段数组，这些字段必须和下一行的值一致才允许合并当前行
+ *
+ * @returns {{rowspan: number, colspan: number}}
+ */
+export const tableSpanMethod = ({ row, column, rowIndex, columnIndex }, tableData, mergeList) => {
+  // 如果合并的列数大于1，需要对数据进行改造，使后面的列依赖于前面的列
+  if (mergeList.length > 1) {
+    tableData = JSON.parse(JSON.stringify(tableData))
+    tableData.forEach(item => {
+      mergeList.forEach((m, i) => {
+        const { prop, deps = [] } = m
+        if (i) {
+          // 当前单元格的内容拼接上依赖字段的内容
+          item[prop] = [prop, ...deps].map(f => item[f]).join(separator)
+        }
+      })
+    })
+  }
+  for (const { prop } of mergeList) {
+    if (prop === column.property) {
+      const spanArr = getSpanArr(tableData, prop)
+      const rowspan = spanArr[rowIndex]
+      const colspan = rowspan > 0 ? 1 : 0
+      return { rowspan, colspan }
+    }
+  }
+}
+
+export { 
+  tableSpanMethod,
+  mergeRowByProp 
+};
 ```
 
 ## 推荐文章
