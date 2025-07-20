@@ -113,6 +113,7 @@ function sidebarNotes() {
         { text: 'ESLint', link: 'eslint' },
         { text: '表格封装', link: 'table' },
         { text: '国际化', link: 'i18n' },
+        { text: 'Vue', link: 'vue' },
       ]
     }
   ]

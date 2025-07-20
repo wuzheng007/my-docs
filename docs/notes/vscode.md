@@ -20,7 +20,7 @@
 
 ### [命令行界面](https://code.visualstudio.com/docs/editor/command-line)
 
-VSCode内置了强大的命令行界面，可让您控制启动编辑器的方式。您可以通过命令行选项（开关）打开文件、安装扩展、更改显示语言和输出诊断信息。
+VSCode 内置了强大的命令行界面，可让您控制启动编辑器的方式。您可以通过命令行选项（开关）打开文件、安装扩展、更改显示语言和输出诊断信息。
 
 ## 使用快捷键
 
@@ -29,6 +29,10 @@ VSCode内置了强大的命令行界面，可让您控制启动编辑器的方�
 `Ctrl+Shift+P`可直接进入编辑器命令
 `Ctrl+Shift+O`可让您导航到文件中的特定符号
 `Ctrl+G`可让你导航至文件中的特定行
+
+## 实用工具
+
+1. [代码片段](https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode)
 
 ## 推荐插件
 
@@ -39,4 +43,4 @@ VSCode内置了强大的命令行界面，可让您控制启动编辑器的方�
 
 ## 相关链接
 
-1. [VSCode官方文档](https://code.visualstudio.com/docs)
+1. [VSCode 官方文档](https://code.visualstudio.com/docs)

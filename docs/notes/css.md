@@ -6,6 +6,11 @@
 
 - `:focus-within`: 当元素或其任意后代元素被聚焦时，将匹配该元素。换言之，它表示 :focus 伪类匹配到该元素自身或它的后代时，该伪类生效。
 
+## CSS 命名规范
+
+1. [class 命名规范](https://www.pianshen.com/article/7831678159/)
+2. [CSS — BEM 命名规范](https://juejin.cn/post/6844903672162304013?searchId=202507201725453B407FBC5197BE0C271A)
+
 ## 精选文章
 
 1. [让 CSS flex 布局最后一行列表左对齐的 N 种方法](https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/)
