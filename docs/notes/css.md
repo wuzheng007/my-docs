@@ -11,6 +11,14 @@
 1. [class 命名规范](https://www.pianshen.com/article/7831678159/)
 2. [CSS — BEM 命名规范](https://juejin.cn/post/6844903672162304013?searchId=202507201725453B407FBC5197BE0C271A)
 
+## Sass
+世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
+
+### 文档
+1. [官方文档](https://sass-lang.com/documentation)
+1. [中文文档](https://sass-lang.com.cn/documentation/)
+2. [中文文档](https://ezdoc.cn/docs/sass/)
+
 ## 精选文章
 
 1. [让 CSS flex 布局最后一行列表左对齐的 N 种方法](https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/)
