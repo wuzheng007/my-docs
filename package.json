@@ -2,6 +2,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^5.0.0",
     "eslint": "^9.32.0",
+    "eslint-plugin-format": "^1.0.1",
     "vitepress": "^1.0.0-rc.45"
   },
   "scripts": {

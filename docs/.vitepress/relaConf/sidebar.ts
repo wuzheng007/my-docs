@@ -1,5 +1,6 @@
 /* 配置侧边栏 */
-import { DefaultTheme } from "vitepress"
+import type { DefaultTheme } from 'vitepress'
+
 export const sidebar: DefaultTheme.Sidebar = {
   /* 组件库的侧边栏 */
   '/component-library/': { base: '/component-library/', items: sidebarComponentLibrary() },
@@ -14,7 +15,7 @@ export const sidebar: DefaultTheme.Sidebar = {
   /* 笔记 */
   '/notes/': { base: '/notes/', items: sidebarNotes() },
   /* 网站的侧边栏 */
-  '/website/': { base: '/website/', items: sidebarWebsite() }
+  '/website/': { base: '/website/', items: sidebarWebsite() },
 }
 function sidebarComponentLibrary() {
   return [
@@ -29,8 +30,8 @@ function sidebarComponentLibrary() {
         { text: 'Dialog 对话框', link: 'dialog' },
         { text: '组件库打包', link: 'bundle' },
         { text: '组件库测试', link: 'test' },
-      ]
-    }
+      ],
+    },
   ]
 }
 
@@ -45,9 +46,9 @@ function sidebarTemplate() {
         { text: '图标使用', link: 'icon' },
         { text: 'mock数据', link: 'mock' },
         { text: '网络请求', link: 'request' },
-        { text: '路由配置', link: 'router' }
-      ]
-    }
+        { text: '路由配置', link: 'router' },
+      ],
+    },
   ]
 }
 /* 【库】的侧边栏配置 */
@@ -62,8 +63,9 @@ function sidebarLibrary() {
         { text: 'vue-i18n', link: 'vue-i18n' },
         { text: 'pptxgenjs', link: 'pptxgenjs' },
         { text: 'vue', link: 'vue' },
-      ]
-    }
+        { text: 'element', link: 'element' },
+      ],
+    },
   ]
 }
 
@@ -76,8 +78,8 @@ function sidebarVscodeExtension() {
         { text: '开始', link: 'index' },
         { text: '介绍', link: 'introduce' },
         { text: '编程语言功能', link: 'programmaticLanguageFeatures' },
-      ]
-    }
+      ],
+    },
   ]
 }
 function sidebarNodejs() {
@@ -87,8 +89,8 @@ function sidebarNodejs() {
       collapsed: false, // 是否折叠
       items: [
         { text: '开始', link: 'index' },
-      ]
-    }
+      ],
+    },
   ]
 }
 
@@ -114,8 +116,8 @@ function sidebarNotes() {
         { text: '表格封装', link: 'table' },
         { text: '国际化', link: 'i18n' },
         { text: 'Vue', link: 'vue' },
-      ]
-    }
+      ],
+    },
   ]
 }
 
@@ -127,7 +129,7 @@ function sidebarWebsite() {
       collapsed: false, // 是否折叠
       items: [
         { text: '博客', link: 'blog' },
-      ]
-    }
+      ],
+    },
   ]
 }
