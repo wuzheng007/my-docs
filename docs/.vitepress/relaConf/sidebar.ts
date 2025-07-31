@@ -64,6 +64,7 @@ function sidebarLibrary() {
         { text: 'pptxgenjs', link: 'pptxgenjs' },
         { text: 'vue', link: 'vue' },
         { text: 'element', link: 'element' },
+        { text: 'ag-grid', link: 'agGrid' },
       ],
     },
   ]
